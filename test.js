@@ -26,6 +26,9 @@ else{
   }
   var query="INSERT INTO departement (nom_departement) VALUES('table_user[0]')";
 
+<div>
+  
+</div>
 
 
   <tr>
