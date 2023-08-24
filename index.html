@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+ <script>window.$ = window.jQuery = require('./jquery-2.1.4.js');</script>
+</head>
+
+<body style="background-color: white;">
+  <div class="container  " style="margin-top: 10%; margin-bottom: 10%;">
+    <div class="row justify-content-md-center">
+      <div class="col-md-10 col-lg-10 " style="height: 500px; background:white;">
+        <div class="row" style="height: 100%">
+          <div class="col-md-7  d-sm-none d-md-block d-xm-none d-m-block" style="background-color:ghostwhite ;height: 100%;">
+           <img src="C:\Users\Manuella Nzooh\Documents\projet\front_end\Images\21.jpg" class="img-fluid" alt="Responsive image" width="100%" height="100%" style="margin-top: 15%;">   
+         </div>
+         <div class="col-md-5 col-sm-12 col-xm-12" style="background-color:white; height: 100%">
+          <form>
+             <div class="mb-3" style="margin-top: 25%;">
+    <h1 P align="center"><font color="#500b48!important"><strong><U>LOGIN</U></strong></h1><br><br>
+             
+              <div class="new">
+                <div class="input-group mb-3">
+                  <span class="input-group-text"><img src="C:\Users\Manuella Nzooh\Documents\projet\front_end\Images\25.png" class="img-fluid" alt="Responsive image" width="100%" height="100%"></span>
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Nom">
+                    <label for="floatingInputGroup1">Nom</label>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <span class="input-group-text"><img src="C:\Users\Manuella Nzooh\Documents\projet\front_end\Images\26.png" class="img-fluid" alt="Responsive image" width="100%" height="100%"></span>
+                  <div class="form-floating">
+                    <input type="Password" class="form-control" id="floatingInputGroup2" placeholder="Mot de passe">
+                    <label for="floatingInputGroup2" id="mp">Mot de passe</label>
+                  </div>
+                </div>
+              </div>
+             <button type="button" value="connexion" class="btn btn-primary" style="
+                Background-color: #500b48!important;
+                padding-left: 43px;
+                padding-right: 43px !important;" onclick="verification()">Connexion</button>
+            </form>
+          </div>
+          <div id="resultDiv"></div>
+        </div>
+      </div>
+    </div>  
+  </div>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<br>
+<!-- <button type="submit" class="btn btn-primary" style="
+    Background-color: #500b48!important;
+    padding-left: 43px;
+    padding-right: 43px !important;" onclick="database_connection()">Submit</button>
+    <div id="bd">
+    </div>
+    <input type="button" value="test" onclick="verification()"> -->
+</body>
+<script src="js.js"></script>
+</html>

@@ -1,0 +1,384 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>acceuil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<style type="text/css">
+  .navbar{
+    background-color: #500b48!important;
+  }
+  .nav-link{
+    color: white !important;
+  }
+  .navbar-brand{
+    color: white !important;
+  }
+  .acceuil-box{
+    background:white;
+    border-radius: 15px;
+  }
+  body{
+    background-color: white;
+  }
+</style>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div>
+        <a class="navbar-brand" href="#">InventApp</a>
+      </div>
+      
+      <div class="collapse navbar-collapse d-flex justify-content-center" id="navbarSupportedContent" >
+        <div class="">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Utilisateurs</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalNusers">Nouveau utilisateur</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalNdepartement">Nouveau departement</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" onclick="liste_utilisateur()">Listes des utilisateurs</a></li>
+                <li><a class="dropdown-item" href="#" onclick="liste_departement()">Listes des departements</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Ordinateurs</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalNpc">Ajout  d'un ordinateur</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalSpc" >Suppression d'un ordinateur</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalTpc" >Transfert d'ordinateurs</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" onclick="liste_ordinateur()">Listes des ordinateurs</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Imprimantes</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalNimp" > Ajout  d'une imprimante</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalAimp">Suppresion d'une imprimante</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" onclick="liste_imprimante()">Listes des imprimantes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pannes</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Categorie de pannes</a></li>
+                <li><a class="dropdown-item" href="#">Nouvelle panne</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Listes des pannes</a></li>
+              </ul>
+            </li>
+          </ul></div>
+
+        </div> <div class="d-flex justify-content-end">
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 acceuil-box" type="search" placeholder="Rechercher" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit" style="    background-color: #80387a;
+            border: 1px solid #62035b; color: white;"><span class="material-symbols-outlined">
+              search
+            </span></button>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="modalNusers" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Enregistrement_utilisateur</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="Nuser">
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Matricule_Utilisateur</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre matricule" >
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nom_Utilisateur</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre nom" >
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Prenom_Utilisateur</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre prenom">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Poste</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer votre poste">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Site</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre site">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Id_departement</label>
+                <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Entrer l'identifiant de votre departement">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Mot_passe</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre mot de passe">
+              </div>
+            </div>
+          </form>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+            <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;" onclick="new_user()">Enregistrer</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalNdepartement" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Enregistrement_departement</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="Ndepartement">
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nouveau_departement</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le nouveau departement" >
+              </div>
+           </form>
+         </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+            <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;" onclick="new_departement()">Enregistrer</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+<div class="modal fade" id="modalNpc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enregistrement_Ordinateur</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="new_pc">
+       <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">identifiant_utilisateur</label>
+        <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Entrer l'identifiant de l'utilisateur">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Numero_Serie</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre site">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Nom_Ordinateur</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le nom de la machine">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Type</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le type d'ordinateur">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput2" class="form-label">Marque</label>
+        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer la marque">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Model</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le model">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Taille_disque dur</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer la taille du disque dur">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Type_disque dur</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le type de disque dur">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Taille_RAM</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer la taille de la RAM">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Type_processeur</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le type de processeur">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Taille_ecran</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer la taille de  l'ecran">
+      </div>
+      <div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Date_achat</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer la date d'achat">
+      </div><div class="mb-3">
+        <label for="formGroupExampleInput" class="form-label">Date_allocation</label>
+        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer la date d'allocation">
+      </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+      <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;" onclick="new_laptop()" >Enregistrer</button>
+    </div>
+  </div>
+</div>
+</div>
+<div class="modal fade" id="modalSpc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression_ordinateur</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id='oldpc'>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Nom_Utilisateur</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre nom">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Nom_ordinateur</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer votre departement">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Numero_serie</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre site">
+        </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+        <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;" onclick="delete_laptop()">Enregistrer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalTpc" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Transfert_Ordinateur</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Ancien_Utilisateur</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre nom">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Nouveau_Utilisateur</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer votre departement">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Nom_Ordinateur</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre site">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Numero_Serie</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre site">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+        <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalNimp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Enregistrement_Imprimante</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="new_print">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Numero_Serie</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le numero de serie">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Model</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer le model">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Marque</Marquee></label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer la marque">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Bureau</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le bureau">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Site</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer le site">
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+        <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;" onclick=" new_printer()">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="modalAimp" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Suppression_Imprimante</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Marque</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre nom">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label">Model</label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Entrer votre departement">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Numero_serie</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre numero de serie">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label">Site</label>
+          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Entrer votre site">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color:#80387a ; color: white;">Fermer</button>
+        <button type="button" class="btn btn-primary" style="background-color: #62035b; color: white;">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="col-md-12">
+<div class="col-md-2"></div>
+<div class="col-md-8">
+  <table class="table  table-striped" id="liste">
+    <thead id="myhead"></thead>
+    <tbody id="mybody"></tbody>
+  </table>
+</div>
+<div class="col-md-2"></div>
+</div>
+</body>
+<script src="js.js"></script>
+</html>
